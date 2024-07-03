@@ -1,0 +1,30 @@
+.pesquisa{
+    display: flex;
+    align-items: center;
+
+    &_input{
+        border-radius: 14px 0 0 14px !important;
+        height: 70px !important;
+        font-size: 20px !important; 
+        padding: 0 10px !important;
+        flex: 1;
+        background-color: white;
+    }
+
+    &_button{
+        height: 70px;
+        border: 0;
+        border-radius: 0 14px 14px 0;
+        background-color: #397B57;
+        width:80px;
+        transition: all 400ms;
+
+        &:hover{
+            filter: brightness(0.9);
+        }
+
+        & .bi{
+            font-size: 26px;
+        }
+    }
+}

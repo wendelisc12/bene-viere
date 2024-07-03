@@ -1,0 +1,32 @@
+.produto{
+    width: 200px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;    
+    margin-bottom: 20px;
+
+    &_text{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+        &_nome{
+            font-size: 22px;
+            font-weight: bold;
+        }
+    }
+
+    &_button{
+        background-color: #397B57;
+        height: 40px;
+        border: 0;
+        border-radius: 10px;
+        font-weight: bold;
+        transition: all ease-in 300ms;
+
+        &:hover{
+            filter: brightness(0.9);
+        }
+    }
+}
