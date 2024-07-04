@@ -5,9 +5,8 @@ import Form from 'react-bootstrap/Form';
 const Login = () => {
     return (
         <motion.div className="login"
-        initial={{ opacity: 0, y: 60 }}
-        animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: -60 }}
+        initial={{ opacity: 0}}
+        animate={{ opacity: 1}}
         transition={{ duration: 0.4 }}
         >
             <div className="box_background">
