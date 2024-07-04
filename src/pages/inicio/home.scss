@@ -1,3 +1,5 @@
+@use "../../variables.scss";
+
 .pesquisa{
     display: flex;
     align-items: center;
@@ -15,7 +17,7 @@
         height: 70px;
         border: 0;
         border-radius: 0 14px 14px 0;
-        background-color: #397B57;
+        background-color: variables.$corPrincipal ;
         width:80px;
         transition: all 400ms;
 

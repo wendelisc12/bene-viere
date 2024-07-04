@@ -1,15 +1,17 @@
+@use "../../variables.scss";
+
 @mixin active-link{
     background-color: white  !important;
-    color: #397B57 !important;
+    color: variables.$corPrincipal !important;
 }
 
 .active{
     background-color: white  !important;
-    color: #397B57 !important;
+    color: variables.$corPrincipal  !important;
 }
 
 .navbar{
-    background-color: #397B57;
+    background-color: variables.$corPrincipal ;
     font-weight: 500;
     
     &_link{
