@@ -5,27 +5,102 @@
     color: variables.$corPrincipal !important;
 }
 
-.active{
-    background-color: white  !important;
-    color: variables.$corPrincipal  !important;
-}
+.nav{
+    position: relative;
+    height: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-.navbar{
-    background-color: variables.$corPrincipal ;
-    font-weight: 500;
-    
-    &_link{
-        font-size: 18px !important;
-        margin-right: 10px;
-        border-radius: 10px;
-        &:hover{
-            @include active-link();
+    &_container{
+        margin-top: 20px;
+        position:fixed;
+        top: 0;
+        height: 110px;
+        display: flex;
+        align-items: center;
+        background-color: white;
+        border-radius: 15px;
+        border-bottom: 5px solid variables.$corPrincipal;
+        justify-content: space-between;
+        
+        
+        &_slice{
+            display: flex;
+            align-items: center;
+            padding: 25px;
+            gap: 35px;
+
+            &_carrinho{
+                text-decoration: none;
+                display: flex;
+                align-items: center;
+                gap: 8px;
+
+                &_counter{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    background-color: variables.$corPrincipal;
+                    width: 35px;
+                    height: 35px;
+                    text-align: center;
+                    border-radius: 50%;
+                    color: white;
+                    font-weight: bold;
+                    font-size: 20px;
+                }
+            }
+
+            &_login{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-decoration: none;
+                gap: 5px;
+                height: 50px;
+                width: 150px;
+                transition: all 400ms;
+                
+                &_text{
+                    color: #1d1d1d;
+                    line-height: 20px;
+                }
+            }
+
+        }
+    }
+
+    &_input{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &_input{
+            background-color: #F6F6F6;
+            height: 42px;
+            padding: 0 10px;
+            border-top: 1px solid #A3A3A3;
+            border-left: 1px solid #A3A3A3;
+            border-bottom: 1px solid #A3A3A3;
+            border-right: none;
+            border-radius: 10px 0 0 10px;
+            color: #1d1d1d;
+            outline: none;
         }
 
-        &_profile{
-            display: flex !important;
-            flex-direction: column !important;
-            align-items: center !important;
+        &_button{
+            height: 42px;
+            border: 0;
+            background-color: #F6F6F6;
+            border-radius: 0 10px 10px 0;
+            border-top: 1px solid #A3A3A3;
+            border-left: none;
+            border-bottom: 1px solid #A3A3A3;
+            border-right: 1px solid #A3A3A3;
+            padding: 0 10px;
+            display: flex;
+            align-items: center;
         }
     }
 }

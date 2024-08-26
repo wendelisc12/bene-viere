@@ -1,45 +1,43 @@
-import { NavLink, Outlet, useLocation } from 'react-router-dom';
-import { Navbar, Container, Nav } from 'react-bootstrap';
+import { NavLink, Outlet } from 'react-router-dom';
 import "./Navbar.scss"
 
-const NavBar = ({ cliente }) => {
-    const location = useLocation();
+const NavBar = () => {
 
     return (
         <>
-            <Navbar expand="lg" data-bs-theme="dark" className="navbar py-2">
-                <Container>
-                    <Navbar.Brand href="#home"><img src="./logo-bv.png" width={50} alt="" /></Navbar.Brand>
-                    <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                    <Navbar.Collapse id="basic-navbar-nav">
-                        {
-                            cliente ? (
-                                <Nav className="w-100 d-flex justify-content-end">
-                                    <NavLink to="/" className='navbar_link nav-link'>Home</NavLink>
-                                    <NavLink to="/login" className='navbar_link nav-link'>Cadastre-se</NavLink>
-                                    <NavLink to="/carrinho" className='navbar_link nav-link'><i class="bi bi-cart-fill"></i> Carrinho</NavLink>
-                                </Nav>
-                            ) : (
-                                <Nav className="w-100 d-flex justify-content-end align-items-center">
+            <nav className='nav'>
+                <div className='nav_container container'>
+                    <div className='nav_container_slice'>
+                        <NavLink to={'/'}>
+                            <img src="./logo-bene.png" alt="" width={80} />
+                        </NavLink>
+                        <div className='nav_input'>
+                            <input className='nav_input_input' type="text" placeholder='Pesquise um produto' />
+                            <button className='nav_input_button'>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#7fa653" className="bi bi-search" viewBox="0 0 16 16">
+                                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
 
-                                    <NavLink to="/" className='navbar_link nav-link'>Home</NavLink>
-                                    <NavLink to="/gerenciamento" className='navbar_link nav-link'>Gerenciamento</NavLink>
-                                    <NavLink to="/produtos" className='navbar_link nav-link'>Produtos</NavLink>
-                                    <NavLink to="/vendas" className='navbar_link nav-link'>Vendas</NavLink>
-                                    <NavLink to="/estoque" className='navbar_link nav-link'>Estoque</NavLink>
-                                    <NavLink to="/perfil" className='navbar_link navbar_link_profile nav-link'>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
-                                            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
-                                            <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
-                                        </svg>
-                                        Olá, cliente
-                                    </NavLink>
-                                </Nav>
-                            )
-                        }
-                    </Navbar.Collapse>
-                </Container>
-            </Navbar>
+                    <div className='nav_container_slice'>
+                        <NavLink to={'/login'} className='nav_container_slice_login'>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" fill="#7fa653" className="bi bi-person" viewBox="0 0 16 16">
+                                <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z" />
+                            </svg>
+                            <span className='nav_container_slice_login_text'>Entre ou <br />Cadastre-se</span>
+                        </NavLink>
+
+                        <NavLink to={'/'} className='nav_container_slice_carrinho'>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="#1d1d1d" className="bi bi-cart" viewBox="0 0 16 16">
+                                <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
+                            </svg>
+                            <span className='nav_container_slice_carrinho_counter'>2</span>
+                        </NavLink>
+                    </div>
+                </div>
+            </nav>
 
             <Outlet />
         </>
