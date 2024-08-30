@@ -1,0 +1,60 @@
+@use "../../variables.scss";
+
+.cadastro_sidebar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    gap: 30px;
+
+    &_etapas{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 20px;
+
+        &_etapa{
+            border: 4px solid variables.$corPrincipal;
+            color: variables.$corPrincipal;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4em;
+            font-weight: bold;
+
+            &--active{
+                background-color: variables.$corPrincipal;
+                color: white;
+            }
+        }
+    }
+}
+
+.cadastro_form{
+    background-color: white;
+    border-radius: 40px 0 0 40px;
+    padding: 50px;
+    
+
+    &_button{
+        border: 0;
+        width: 200px;
+        height: 50px;
+        border-radius: 15px;
+        font-size: 20px;
+        font-weight: bold;
+
+        &_voltar{
+            background-color: transparent;
+            color: #333333;
+        }
+
+        &_avancar{
+            background-color: variables.$corPrincipal;
+        }
+    }
+}

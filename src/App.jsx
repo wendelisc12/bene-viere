@@ -4,6 +4,7 @@ import Home from "./pages/inicio/home";
 import NavBar from "./components/Navbar/Navbar";
 import Carrinho from "./pages/carrinho/Carrinho";
 import './index.scss'
+import Cadastro from "./pages/cadastro/Cadastro";
 
 function App() {
 
@@ -12,6 +13,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/login" element={<Login/>} />
+        <Route path="/cadastro" element={<Cadastro/>} />
         <Route path="/" element={<NavBar cliente={true}/>}>
           <Route index element={<Home/>}/>
           <Route path="carrinho" element={<Carrinho/>} />
