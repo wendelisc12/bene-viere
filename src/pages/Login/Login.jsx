@@ -1,6 +1,7 @@
 import "./Login.scss"
 import {motion} from "framer-motion"
 import Form from 'react-bootstrap/Form';
+import { NavLink } from 'react-router-dom';
 
 const Login = () => {
     return (
@@ -25,6 +26,9 @@ const Login = () => {
                     </Form.Group>
                     <button className="box_form_form_button w-100">Entrar</button>
                 </Form>
+                <div className="d-flex">
+                    <NavLink to="/cadastro">Cadastre-se</NavLink>
+                </div>
             </div>
         </motion.div>
     );
