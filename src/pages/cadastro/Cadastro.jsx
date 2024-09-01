@@ -6,6 +6,7 @@ import Quinta from '../../components/Etapas-Cadastro/quinta';
 import Sexta from '../../components/Etapas-Cadastro/sexta';
 import './Cadastro.scss'
 import { useState } from 'react';
+import { NavLink } from 'react-router-dom';
 
 const Cadastro = () => {
 
@@ -20,7 +21,7 @@ const Cadastro = () => {
     }
 
     const renderStep = () => {
-        switch(step) {
+        switch (step) {
             case 1:
                 return <Primeira />;
             case 2:
@@ -38,13 +39,15 @@ const Cadastro = () => {
         }
     }
 
-    return ( 
+    return (
         <div className='row'>
-            <div className='cadastro_sidebar col-2'>
+            <div className='cadastro_sidebar col-12 col-sm-2'>
                 <div className='cadastro_sidebar_logo'>
-                    <img src="./logo-bene.png" alt="" width={120}/>
+                    <NavLink to={'/'}>
+                        <img src="./logo-bene.png" alt="" width={120} />
+                    </NavLink>
                 </div>
-                
+
                 <div className='cadastro_sidebar_etapas'>
                     <div className={`cadastro_sidebar_etapas_etapa ${step === 1 ? 'cadastro_sidebar_etapas_etapa--active' : ''}`}>1</div>
                     <div className={`cadastro_sidebar_etapas_etapa ${step === 2 ? 'cadastro_sidebar_etapas_etapa--active' : ''}`}>2</div>
@@ -55,25 +58,25 @@ const Cadastro = () => {
                 </div>
             </div>
 
-            <div className='cadastro_form col-10 p-5'>
+            <div className='cadastro_form col-12 col-sm-10 p-5'>
                 <div className='container'>
                     <div className='text-center'><h2>Formulário de anamnese</h2></div>
                     <div className='mt-4'>
                         {renderStep()}
                     </div>
                     <div className='d-flex justify-content-between mt-5'>
-                        <button className='cadastro_form_button cadastro_form_button_voltar' onClick={prevStep} style={{display:step === 1 ? 'none' : 'inline'}}>
+                        <button className='cadastro_form_button cadastro_form_button_voltar' onClick={prevStep} style={{ display: step === 1 ? 'none' : 'inline' }}>
                             Voltar
                         </button>
                         <button className='cadastro_form_button cadastro_form_button_avancar' onClick={nextStep} >
                             Próximo
                         </button>
                     </div>
-
                 </div>
             </div>
         </div>
-     );
+
+    );
 }
- 
+
 export default Cadastro;
